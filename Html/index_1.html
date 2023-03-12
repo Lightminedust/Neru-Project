@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Css/index_01.css" />
+    <title>Inscription</title>
+  </head>
+  <body>
+    <div>
+      <h1>Inscription</h1>
+      <form action="../data/dataForm.php" method="post" id="myform">
+        <label for="Name"
+          ><input type="text" name="Name" placeholder="Nom" required
+        /></label>
+        <label for="Prenom"
+          ><input type="text" name="Prenom" placeholder="Prénom" required
+        /></label>
+        <label for="Age"
+          ><input type="date" name="Age" id="birthday" required
+        /></label>
+        <label for="Mail"
+          ><input
+            type="email"
+            name="Mail"
+            id="mail"
+            placeholder="Saisissez votre Email"
+            required
+        /></label>
+        <label for="Password"
+          ><input
+            type="password"
+            name="Password"
+            id="password"
+            placeholder="Saisissez un mot de passe"
+            required
+        /></label>
+        <p>Vous recevrez des Emails</p>
+        <button id="submitButton" type="submit">S'inscrire</button>
+      </form>
+      <a href="../Html/index_0.html">Se connecter</a>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="../Js/form_01.JS"></script>
+  </body>
+</html>

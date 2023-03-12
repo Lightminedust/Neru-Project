@@ -1,0 +1,74 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../font/poppins/Poppins-Regular.ttf) format(truetype);
+}
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    box-sizing: content-box;
+    z-index: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body{ 
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../Media/img/blur_backdround.jpg);
+    background-color: rgba(71, 71, 71, 0.46);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;margin-top: 30px;
+    background-color: rgba(173, 173, 173, 0);
+    width: 300px;
+    height: 75%;
+    border-radius: 20px;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+input{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 250px;
+}
+p{
+    font-size: small;
+    color: rgba(45, 85, 167, 0.85);
+}
+button{
+    border: none;
+    background-color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 999px;
+    transition: 0.4s ease-in-out;
+}
+button:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+}
+a{
+    color: rgba(45, 85, 167, 0.85);
+    text-decoration: 1px underline rgb(45, 86, 167);
+}
