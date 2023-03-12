@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 // Ouvre le fichier JSON
 $file = '../data/data.json';
@@ -27,4 +28,13 @@ var_dump($form_data);
 
 // Réponse HTTP
 http_response_code(200);
+=======
+
+<?php
+$data = json_decode(file_get_contents('php://input'), true);
+$file = 'data.json';
+$current = file_get_contents($file);
+$current .= json_encode($data) . "\n";
+file_put_contents($file, $current);
+>>>>>>> 46ad9978df4ea687a21c0e45d83e4119f855746c
 ?>
