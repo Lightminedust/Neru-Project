@@ -1,4 +1,3 @@
-const subButton = document.getElementById('submitButton');
 const form = document.getElementById('myForm');
   form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -18,7 +17,7 @@ const form = document.getElementById('myForm');
 
     // Enregistre les données dans un fichier JSON
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '../data/dataForm.php');
+    xhr.open('POST', '../data/data_form.php');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function() {
       if (xhr.status === 200) {
@@ -28,7 +27,6 @@ const form = document.getElementById('myForm');
       }
       // Remet la souris en mode normal
       document.body.style.cursor = 'default';
-      subButton.textContent = 'Loading...'
     };
     xhr.send(json);
   });
