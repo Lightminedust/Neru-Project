@@ -1,6 +1,6 @@
 <?php
 // Ouvre le fichier JSON
-$file = 'data.json';
+$file = '../data/data.json';
 $current_data = file_get_contents($file);
 
 // Décodage du contenu JSON en tableau associatif
