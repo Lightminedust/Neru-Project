@@ -1,0 +1,220 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../font/poppins/Poppins-Regular.ttf) format(truetype);
+}
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    z-index: 1;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+.Neru *{color: white;}
+body{
+    width: 100vw;
+    height: 100vh; background: rgb(45,23,166);
+    background: linear-gradient(37deg, rgba(45,23,166,1) 0%, rgba(33,1,64,0.9457983022310487) 51%, rgba(13,13,13,0.9485994226792279) 100%); 
+    display: flex;
+    grid-area: 10px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#inPut{
+    width: 100%;
+    padding: 30px;
+    gap: 20px;
+}
+img{
+    width: 150px;
+}
+#title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.Neru{
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#hardData{
+    background-color: rgba(255, 255, 255, 0.641);
+    position: absolute;
+    bottom: 0;
+    height: 80vh;
+    width: 20vw;
+    border-top-right-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+hr{width: 80%; font-weight: 100;}
+#chat{
+    width: 80vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+#dialogBox{
+    margin: auto;
+    background-color: rgba(248, 248, 248, 0);
+    width: 95%;
+    height: 80%;
+}
+#entry{
+    margin: auto;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+}
+form, label{
+    width: 80%;
+}
+input{
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border-width: 1px;
+    border-radius: 5px;
+}
+#submitButton{
+    width: 40px;
+    outline: none;
+    border: 1px black;
+    border-radius: 5px;
+}
+#submitButton:hover{
+    cursor: pointer;
+    background-color: rgb(210, 210, 210);
+}
+form{
+    gap: 5px;
+}
+#chat_{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+}
+#logOut{display: flex;
+align-items: center;
+justify-content: center;
+gap: 5px;
+flex-direction: row;
+background-color: rgba(225, 225, 225, 0.858);
+width: 50%;
+border-radius: 5px;}
+#logOut:hover{
+    cursor: pointer;
+    background-color: rgb(225, 225, 225);
+}
+#Name{
+    text-decoration: underline 1px rgb(167, 167, 167);
+}
+#chat_ *{
+    margin: 10px;
+    border-radius: 5px;
+    width: 250px;
+}
+#chat_ li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    background-color: rgba(123, 123, 123, 0.258);
+    gap: 5px;
+}
+#chat_ li:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.77);
+}
+#hardData2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+}
+#chat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70vw;
+    height: 90vh;
+    margin: auto;
+    box-sizing: content-box;
+    overflow-y: scroll;
+}
+#dialogBox{
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    box-sizing: content-box;
+    overflow-y: scroll;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#dialogBox *{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 95%;
+    word-wrap: break-word;
+    overflow: visible;
+}
+#dialogBox::-webkit-scrollbar{
+    width: 20px;
+    background-color: aliceblue;
+    color: aliceblue;
+}
+div#dialogBox {
+    height: 25vh;
+    overflow-y: scroll;
+}
+
+div.user-message {
+    background-color: rgba(255, 255, 255, 0);
+}
+#chat__{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 21px;
+    width: 100%;
+    height: 100%;
+}
+#historique{
+    padding: 5px;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 4%;
+    box-sizing: content-box;
+    border: none;
+    overflow-y: scroll;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px; background: rgb(255,255,255);
+    background: -moz-linear-gradient(0deg, rgba(255,255,255,0.48081230783328954) 0%, rgba(255,255,255,0.2875349969089198) 67%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(255,255,255,0.48081230783328954) 0%, rgba(255,255,255,0.2875349969089198) 67%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(0deg, rgba(255,255,255,0.48081230783328954) 0%, rgba(255,255,255,0.2875349969089198) 67%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1); 
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Media/img/一番(1).png">
+    <link rel="stylesheet" href="../Css/index_02.css">
+    <title>ネール => ChatMe</title>
+</head>
+<body>
+    <div id="data">
+        <div class="Neru"><img src="../Media/img/一番-removebg-preview.png" alt="logo"><div id="title"><h1>ネール</h1>
+        <p>ChatMe</p></div></div>
+        <div id="hardData"><p id="Name">Users_0120</p><hr>
+            <ul id="chat_">
+                <li><ion-icon name="chatbox-ellipses"></ion-icon><p>Chat_1</p></li>
+                <li><ion-icon name="chatbox-ellipses"></ion-icon><p>Chat_2</p></li>
+                <li><ion-icon name="chatbox-ellipses"></ion-icon><p>Chat_3</p></li>
+            </ul>
+            <hr>
+            <div id="hardData2">
+                <div class="status" style="display: flex; flex-direction: row; gap: 5px;"><p>Status : <p id="status" style="color: rgba(2, 53, 14, 0.848);">Lambda</p></p></div>
+                <a href="#" target="_parent" style="color: rgb(49, 146, 19);">Activer la Version Pro</a>
+            </div>
+            <div id="logOut"><ion-icon name="log-out"></ion-icon><p>Log out</p></div>
+        </div>
+    </div>
+    <div id="inPut" style="display: flex;
+    flex-direction: column; width: 70vw;
+    align-items: center; justify-content: center;" >
+    <div id="chat__"> 
+        <div id="dialogBox" style="height: 100%; overflow-y: scroll;"></div>
+        <div id="historique"></div>
+    </div>
+        <div id="entry"><form id="chatForm" style="display: flex; flex-direction: row;" action=""><label id="labelFields" for="fields"><input type="text" name="fields" id="entryField"></label>
+        <button id="submitButton" type="submit"><ion-icon name="send"></ion-icon></button></form></div>
+    </div>
+    <script src="../Js/authFireBase.js"></script>
+    <script src="#"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
