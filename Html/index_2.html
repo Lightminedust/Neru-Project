@@ -8,35 +8,88 @@
     <link rel="stylesheet" href="../Css/index_02.css">
     <title>ネール => ChatMe</title>
 </head>
-<body>
-    <div id="data">
-        <div class="Neru"><img src="../Media/img/一番-removebg-preview.png" alt="logo"><div id="title"><h1>ネール</h1>
-        <p>ChatMe</p></div></div>
-        <div id="hardData"><p id="Name">Users_0120</p><hr>
-            <ul id="chat_">
-                <li><ion-icon name="chatbox-ellipses"></ion-icon><p>Chat_1</p></li>
-                <li><ion-icon name="chatbox-ellipses"></ion-icon><p>Chat_2</p></li>
-                <li><ion-icon name="chatbox-ellipses"></ion-icon><p>Chat_3</p></li>
-            </ul>
-            <hr>
-            <div id="hardData2">
-                <div class="status" style="display: flex; flex-direction: row; gap: 5px;"><p>Status : <p id="status" style="color: rgba(2, 53, 14, 0.848);">Lambda</p></p></div>
-                <a href="#" target="_parent" style="color: rgb(49, 146, 19);">Activer la Version Pro</a>
+<body id="body">
+    <div class="container_3" style="position: fixed; z-index: 200;" id="page_3">
+        <div class="contain">
+          <div class="side_bar" id="side_bar">
+            <div class="nav_header">
+              <img src="../Media/img/lee ji-eiun.jpg" style="border-radius: 50%;">
+              <span></span>
+              <h2>Jennie.</h2>
+              <ion-icon onclick="sideMove()" name="chevron-back-outline" id="icon"></ion-icon>
             </div>
-            <div id="logOut"><ion-icon name="log-out"></ion-icon><p>Log out</p></div>
+            <div>
+              <nav class="sec">
+                <ul>
+                  <li>
+                    <ion-icon name="tv-outline"></ion-icon>
+                    <span>Chat</span>
+                    <ion-icon name="cog"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="folder-outline"></ion-icon>
+                    Project
+                  </li>
+                  <li>
+                    <ion-icon name="star-outline"></ion-icon>
+                    Stored
+                  </li>
+                  <li>
+                    <ion-icon name="analytics-outline"></ion-icon>
+                    Statistics
+                  </li>
+                  <li>
+                    <ion-icon name="mail-outline"></ion-icon>
+                    Mail
+                  </li>
+                  <li>
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    Calendar
+                  </li>
+                  <li>
+                    <ion-icon name="notifications-outline"></ion-icon>
+                    Notification
+                  </li>
+                </ul>
+              </nav>
+              <hr />
+              <div class="extra">
+                <nav>
+                  <ul>
+                    <li>
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                      Help
+                    </li>
+                    <li>
+                      <ion-icon name="log-out-outline"></ion-icon>
+                      Log out
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <div id="inPut" style="display: flex;
-    flex-direction: column; width: 70vw;
-    align-items: center; justify-content: center;" >
-    <div id="chat__"> 
-        <div id="dialogBox" style="height: 100%; overflow-y: scroll;"></div>
-        <div id="historique"></div>
-    </div>
-        <div id="entry"><form id="chatForm" style="display: flex; flex-direction: row;" action=""><label id="labelFields" for="fields"><input type="text" name="fields" id="entryField"></label>
-        <button id="submitButton" type="submit"><ion-icon name="send"></ion-icon></button></form></div>
-    </div>
+      </div>
+      <div id="chatMess" style="margin-bottom: 20vh; padding-top: 10vh; display: flex; gap: 10px; flex-direction: column;" ></div>
+            <div id="entry"><form id="chatForm" style="display: flex; flex-direction: row;" action=""><input type="text" name="fields" id="entryField">
+            <button id="submitButton" type="submit"><ion-icon name="send"></ion-icon></button></form></div>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      ></script>
+      <script>
+          let sideBar = document.getElementById('side_bar');
+          let icon = document.getElementById('icon')
+          function sideMove(){
+              sideBar.classList.toggle('side')
+              icon.classList.toggle('icon_deg')
+          }
+      </script>
     <script src="../Js/authFireBase.js"></script>
-    <script src="#"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -86,10 +86,12 @@ a:hover{
     cursor: pointer;
     color: rgb(24, 64, 113);
 }
+nav ul{
+    margin-bottom: 20px;
+}
 img{
     position: absolute;
     z-index: 999;
-    border-radius: 999;
     display: inline-block;
     bottom: 70%;
 }
