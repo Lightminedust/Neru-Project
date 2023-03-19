@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../Css/index_02.css">
     <title>ネール => ChatMe</title>
 </head>
-<body id="body">
+<body id="body" onload="showDiv('chatMess_01', Chat_01)">
     <div class="container_3" style="position: fixed; z-index: 200;" id="page_3">
         <div class="contain">
           <div class="side_bar" id="side_bar">
@@ -21,39 +21,39 @@
             <div>
               <nav class="sec">
                 <ul>
-                  <li>
-                    <ion-icon name="tv-outline"></ion-icon>
-                    <span>Chat</span>
-                    <ion-icon name="cog"></ion-icon>
+                  <li id="Chat_01" onclick="showDiv('chatMess_01', this)">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                    <span>Chat_01</span>
+                    <ion-icon name="home-outline"></ion-icon>
                   </li>
-                  <li>
-                    <ion-icon name="folder-outline"></ion-icon>
-                    Project
+                  <li onclick="showDiv('chatMess_02', this)">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                    Chat_02
                   </li>
-                  <li>
-                    <ion-icon name="star-outline"></ion-icon>
-                    Stored
+                  <li onclick="showDiv('chatMess_03', this)">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                    Chat_03
                   </li>
-                  <li>
+                  <li id="dataStat">
                     <ion-icon name="analytics-outline"></ion-icon>
-                    Statistics
+                    statut
                   </li>
-                  <li>
-                    <ion-icon name="mail-outline"></ion-icon>
-                    Mail
+                  <li onclick="clearChatMessages()">
+                    <ion-icon name="trash-outline"></ion-icon>
+                    Supression...
                   </li>
-                  <li>
-                    <ion-icon name="calendar-outline"></ion-icon>
-                    Calendar
+                  <li id="billingBtn">
+                    <ion-icon name="cash-outline"></ion-icon>
+                    Mode Pro
                   </li>
-                  <li>
+                  <li id="notifBtn">
                     <ion-icon name="notifications-outline"></ion-icon>
                     Notification
                   </li>
                 </ul>
               </nav>
               <hr />
-              <div class="extra">
+              <div class="extra" style="margin-bottom: 40px;">
                 <nav>
                   <ul>
                     <li>
@@ -71,7 +71,22 @@
           </div>
         </div>
       </div>
-      <div id="chatMess" style="margin-bottom: 20vh; padding-top: 10vh; display: flex; gap: 10px; flex-direction: column;" ></div>
+      <div id="stats">
+        <div id="stat" style="
+          margin: 50px; background-color: white; position: fixed; right: 400px; border-radius: 10px; width: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px;">
+          <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 20px;"><img src="../Media/img/一番_1_-removebg-preview.png" alt="logo" style="width: 60px;"> <li style="display: flex; flex-direction: row; gap: 10px;">Statut : <p>none</p></li></div>
+        <P>Temps restants : <p id="token"></p></P>
+        </div>
+      </div>
+      <div id="billing" style=" width: 250px; position: fixed; top: 100px; right: 400px; background-color: rgb(252, 252, 252); border-radius: 10px;">
+        <div style="display: flex;align-items: center; justify-content: center; gap: 10px; flex-direction: column;"> <div style="display: flex; flex-direction: row;"> ID : <p id="jef"></p></div>
+        <h2 id="proStat">devenir Pro</h2>
+        <form action=""><input style="outline: none; border: none; border-bottom: 1px black solid;" placeholder="inscrivez votre code" type="text"><button style="width: 50px; background-color: white; border: 1px blueviolet solid; border-radius: 5px;">valider</button></form>
+      </div></div>
+      <div id="notif" style="display: none; position: fixed; right: 0; width: 300px; min-height: 200px; background-color: aliceblue; margin: 25px; z-index: 999; border-radius: 10px; overflow-y: scroll; overflow-x: none;"><h1 style="margin: auto;">Notification</h1></div>
+      <div id="chatMess_01" style="margin-bottom: 20vh; padding-top: 10vh; display: flex; gap: 10px; flex-direction: column;" ></div>
+      <div id="chatMess_02" style="margin-bottom: 20vh; padding-top: 10vh; display: flex; gap: 10px; flex-direction: column;" ></div>
+      <div id="chatMess_03" style="margin-bottom: 20vh; padding-top: 10vh; display: flex; gap: 10px; flex-direction: column;" ></div>
             <div id="entry"><form id="chatForm" style="display: flex; flex-direction: row;" action=""><input type="text" name="fields" id="entryField">
             <button id="submitButton" type="submit"><ion-icon name="send"></ion-icon></button></form></div>
       <script
@@ -83,6 +98,7 @@
         src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
       ></script>
       <script>
+        let Chat_01 = document.getElementById('Chat_01')
           let sideBar = document.getElementById('side_bar');
           let icon = document.getElementById('icon')
           function sideMove(){
@@ -90,6 +106,7 @@
               icon.classList.toggle('icon_deg')
           }
       </script>
+      <script src="../Js/restriction.JS"></script>
     <script src="../Js/authFireBase.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

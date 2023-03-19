@@ -111,7 +111,7 @@ body{
   .extra ul li {
     width: 240px;
     border-radius: 0;
-    padding: 12px 4px;
+    padding-bottom: 0px;
   }
   .extra ul li {
     background-color: transparent;
@@ -119,7 +119,7 @@ body{
   .extra ul {
     border-radius: 10px;
     background-color: white;
-    margin: 10px 10px;
+    margin-bottom: 50px;
   }
   hr {
     border: none;
