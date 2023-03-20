@@ -1,4 +1,4 @@
-const apiKeyOpenAi = "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";
+const apiKeyOpenAi = "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";
 const chatForm = document.querySelector("#entry form");
 
 var dialogBox = document.getElementById('chatMess_01');
@@ -47,54 +47,75 @@ chatForm.addEventListener("submit", (event) => {
   userMessage.classList.add("user-message");
   userMessage.style.position = 'relative';
   userMessage.style.right = '0'
-  userMessage.style.marginLeft = "60vh"
+  userMessage.style.marginLeft = "30%"
   userMessage.style.width = "80%";
   dialogBox.appendChild(userMessage);
 
-  // Envoyer la requête à l'API OpenAI
-  const requestOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + apiKeyOpenAi,
-    },
-    body: JSON.stringify({
-      model: "text-davinci-003",
-      prompt:
-        "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: " +
-        userInput +
-        "\nAI:",
-      temperature: 0.1,
-      max_tokens: 4000,
-      top_p: 0.5,
-      frequency_penalty: 0,
-      presence_penalty: 0.6,
-      stop: [" Human:", " AI:"],
-    }),
-  };
-  fetch("https://api.openai.com/v1/completions", requestOptions)
-  .then((response) => response.json())
-  .then((data) => {
-    const aiMessage = document.createElement("div");
-    const text = data.choices[0].text;
+// Ajouter une notification de chargement
+const loadingNotification = document.createElement("div");
+loadingNotification.style.position = 'fixed'
+loadingNotification.style.right = '600px'
+loadingNotification.style.background = 'white'
+loadingNotification.style.borderRadius = "10px"
+loadingNotification.style.height = '25px'
+loadingNotification.style.width = '50px'
+loadingNotification.style.top = '20px'
+loadingNotification.style.right = '20px'
+loadingNotification.textContent = "...";
+loadingNotification.style.display = 'flex'
+loadingNotification.style.alignItems = 'center'
+loadingNotification.style.justifyContent = 'center'
+dialogBox.appendChild(loadingNotification);
 
-    // Ajouter la valeur de la div au contenu du stockage local du navigateur
-    localStorage.setItem("aiMessage", text);
 
-    aiMessage.innerHTML = text.replace(/\n/g, "<br>");
-    aiMessage.classList.add("ai-message");
-    aiMessage.style.width = "50%";
-    aiMessage.style.backgroundColor = "#ffffff";
-    aiMessage.style.borderRadius = "15px";
-    aiMessage.style.marginLeft = "60vh"
-    aiMessage.style.padding = '10px'
-    aiMessage.style.textAlign = 'justify';
-    dialogBox.appendChild(aiMessage);
-    // Effacer l'entrée utilisateur
-    document.querySelector("#entryField").value = "";
-    // Faire défiler la boîte de chat vers le bas après chaque nouveau message ajouté
-    scrollToBottom();
-  })
+// Envoyer la requête à l'API OpenAI
+const requestOptions = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + apiKeyOpenAi,
+  },
+  body: JSON.stringify({
+    model: "gpt-3.5-turbo",
+    messages: [{"role": "user", "content": userInput}],
+    temperature: 0.1,
+    max_tokens: 4000,
+    top_p: 0.5,
+    frequency_penalty: 0,
+    presence_penalty: 0.6,
+    stop: [" Human:", " AI:"],
+  }),
+};
+fetch("https://api.openai.com/v1/chat/completions", requestOptions)
+.then((response) => response.json())
+.then((data) => {
+  console.log(data)
+
+  // Supprimer la notification de chargement
+  dialogBox.removeChild(loadingNotification);
+
+  const aiMessage = document.createElement("div");
+  const text = data.choices[0].message.content;
+
+  // Ajouter la valeur de la div au contenu du stockage local du navigateur
+  localStorage.setItem("aiMessage", text);
+
+  aiMessage.innerHTML = text.replace(/\n/g, "<br>");
+  aiMessage.classList.add("ai-message");
+  aiMessage.style.width = "50%";
+  aiMessage.style.backgroundColor = "#ffffff";
+  aiMessage.style.borderRadius = "15px";
+  aiMessage.style.marginLeft = "35%"
+  aiMessage.style.padding = '10px'
+  aiMessage.style.textAlign = 'justify';
+  dialogBox.appendChild(aiMessage);
+  // Effacer l'entrée utilisateur
+  document.querySelector("#entryField").value = "";
+  userInput.innerText = '';
+  // Faire défiler la boîte de chat vers le bas après chaque nouveau message ajouté
+  scrollToBottom();
+})
+  .catch((error) => console.log(error));
 
 // Récupérer la valeur stockée dans le stockage local du navigateur lors du chargement de la page
 window.onload = function() {
@@ -106,7 +127,7 @@ if (aiMessage) {
   aiMessageDiv.style.width = "50%";
   aiMessageDiv.style.backgroundColor = "#ffffff";
   aiMessageDiv.style.borderRadius = "15px";
-  aiMessageDiv.style.marginLeft = "60vh"
+  aiMessageDiv.style.marginLeft = "60%"
   aiMessageDiv.style.padding = '10px'
   aiMessageDiv.style.textAlign = 'justify';
   dialogBox.appendChild(aiMessageDiv);

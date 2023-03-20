@@ -42,7 +42,7 @@
                     <ion-icon name="trash-outline"></ion-icon>
                     Supression...
                   </li>
-                  <li id="billingBtn">
+                  <li style="z-index: 1000;"id="billingBtn">
                     <ion-icon name="cash-outline"></ion-icon>
                     Mode Pro
                   </li>
@@ -74,14 +74,14 @@
       <div id="stats">
         <div id="stat" style="
           margin: 50px; background-color: white; position: fixed; right: 400px; border-radius: 10px; width: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px;">
-          <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 20px;"><img src="../Media/img/一番_1_-removebg-preview.png" alt="logo" style="width: 60px;"> <li style="display: flex; flex-direction: row; gap: 10px;">Statut : <p>none</p></li></div>
-        <P>Temps restants : <p id="token"></p></P>
+          <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 20px;"><img src="../Media/img/一番_1_-removebg-preview.png" alt="logo" style="width: 60px;"> <li style="display: flex; flex-direction: row; gap: 10px;"><p id="restriction">Mode restreint</p></li></div>
+        <P>Temps restants : <p id="timeLapse"></p></P>
         </div>
       </div>
-      <div id="billing" style=" width: 250px; position: fixed; top: 100px; right: 400px; background-color: rgb(252, 252, 252); border-radius: 10px;">
-        <div style="display: flex;align-items: center; justify-content: center; gap: 10px; flex-direction: column;"> <div style="display: flex; flex-direction: row;"> ID : <p id="jef"></p></div>
+      <div id="billing" style="z-index: 500; width: 250px; position: fixed; top: 200px; right: 50px; background-color: rgb(252, 252, 252); border-radius: 10px;">
+        <div style="display: flex;align-items: center; justify-content: center; gap: 10px; flex-direction: column; position: fixed; bottom: 100px; right: 50px; z-index: 3000;"> <div style="display: flex; flex-direction: row;"> ID : <p id="jef"></p></div>
         <h2 id="proStat">devenir Pro</h2>
-        <form action=""><input style="outline: none; border: none; border-bottom: 1px black solid;" placeholder="inscrivez votre code" type="text"><button style="width: 50px; background-color: white; border: 1px blueviolet solid; border-radius: 5px;">valider</button></form>
+        <form action=""><input style="outline: none; border: none; border-bottom: 1px black solid; background-color: transparent; " placeholder="inscrivez votre code" type="text"><button id="btnBill" style="margin-left: 5px; width: 50px; background-color: white; border: 1px blueviolet solid; border-radius: 5px;">valider</button></form>
       </div></div>
       <div id="notif" style="display: none; position: fixed; right: 0; width: 300px; min-height: 200px; background-color: aliceblue; margin: 25px; z-index: 999; border-radius: 10px; overflow-y: scroll; overflow-x: none;"><h1 style="margin: auto;">Notification</h1></div>
       <div id="chatMess_01" style="margin-bottom: 20vh; padding-top: 10vh; display: flex; gap: 10px; flex-direction: column;" ></div>
