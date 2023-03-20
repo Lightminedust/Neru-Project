@@ -23,6 +23,7 @@ body{
     flex-direction: column;
     gap: 10px;
     width: 100vw;
+    height: 100vh;
     top: 0;
     height: "";
     overflow-y: scroll;
@@ -221,11 +222,11 @@ div.user-messsage, div.ai-message{
     display: flex;
     align-items: center;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   body{
-    width: 100vw;
     box-sizing: content-box;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
   #entry{
     margin-bottom: 10vh;
