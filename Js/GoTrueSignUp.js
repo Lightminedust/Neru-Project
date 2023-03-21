@@ -1,4 +1,4 @@
-import GoTrue from '../node_modules/gotrue-js';
+import GoTrue from 'gotrue-js';
 
 // Instantiate the GoTrue auth client with an optional configuration
 const auth = new GoTrue({
