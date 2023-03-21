@@ -1,0 +1,50 @@
+Arguments: 
+  /usr/bin/node /usr/local/bin/yarn add gotrue-js
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.13.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: connect EHOSTUNREACH 104.16.19.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1481:16)
+
+npm manifest: 
+  {
+    "name": "niji_project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Lightminedust/Neru-Project.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Lightminedust/Neru-Project/issues"
+    },
+    "homepage": "https://github.com/Lightminedust/Neru-Project#readme",
+    "dependencies": {
+      "gotrue-js": "^0.9.29",
+      "node": "^19.8.1",
+      "nodejs": "^0.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

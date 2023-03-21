@@ -19,6 +19,7 @@ form.addEventListener("submit", (event) => {
   auth.login(emailValue, passwordValue, true)
     .then((response) => {
       showMessage(`Success! Response: ${JSON.stringify({ response })}`, form);
+      window.location.href = "../Html/index_2.html";
     })
     .catch((error) => showMessage(`Failed :( ${JSON.stringify(error)}`, form));
 });
