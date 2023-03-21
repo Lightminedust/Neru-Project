@@ -30,7 +30,7 @@ form.addEventListener('submit', (event) => {
     .then((response) => {
       console.log('Confirmation email sent', response);
       // Redirect to success page
-      window.location.href = '../Html/index_2.html';
+      window.location.href = '../index.html';
     })
     .catch((error) => console.log("It's an error", error));
 });
