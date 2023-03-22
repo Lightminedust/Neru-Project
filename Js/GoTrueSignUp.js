@@ -1,36 +1,24 @@
-import GoTrue from '../node_modules/gotrue-js';
+// Script uses auth0.js. See Remarks for details.
 
-// Instantiate the GoTrue auth client with an optional configuration
-const auth = new GoTrue({
-  APIUrl: 'https://lightminedust.netlify.app/.netlify/identity',
-  audience: '',
-  setCookie: true,
-});
 
-const emailInput = document.getElementById('mail');
-const passwordInput = document.getElementById('password');
-const form = document.getElementById('signup-form');
-
-// Handle form submission event
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const email = emailInput.value;
-  const password = passwordInput.value;
-
-  // Validate inputs
-  if (!email || !password) {
-    console.log('Please fill in all fields');
-    return;
-  }
-
-  // Sign up user
-  auth
-    .signup(email, password)
-    .then((response) => {
-      console.log('Confirmation email sent', response);
-      // Redirect to success page
-      window.location.href = '../index.html';
-    })
-    .catch((error) => console.log("It's an error", error));
-});
+  // Initialize client
+  var webAuth = new auth0.WebAuth({
+    domain:       'https://lightminedust.netlify.app/.netlify/identity',
+    clientID:     '{yourClientId}'
+  });
+  
+  webAuth.signup({ 
+    connection: 'CONNECTION', 
+    email: 'EMAIL', 
+    password: 'PASSWORD',
+    username: "johndoe",
+    given_name: "John",
+    family_name: "Doe",
+    name: "John Doe",
+    nickname: "johnny",
+    picture: "http://example.org/jdoe.png",
+    user_metadata: { plan: 'silver', team_id: 'a111' }
+  }, function (err) { 
+    if (err) return alert('Something went wrong: ' + err.message); 
+      return alert('success signup without login!') 
+  });

@@ -7,7 +7,29 @@
     <title>kkl</title>
 </head>
 <body>
-    screen_lock_landscape
-    <script src="../Js/Gtrue.js"></script>
+    <form action="" method="post" id="df">
+        mail<input type="text" name="mail" id="email"><br>
+        password <input type="password" name="pass" id="pasww">
+        <button type="submit">vv</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/gotrue-js/dist/index.js"></script>
+    <script>
+        const auth = new GoTrue({
+            APIUrl: 'https://lightminedust.netlify.app/.netlify/identity',
+            audience: '',
+            setCookie: true,
+        });
+
+        const form = document.getElementById('df');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('pasww').value;
+            auth.signup(email, password)
+                .then((response) => console.log('Confirmation email sent', response))
+                .catch((error) => console.log("It's an error", error));
+        });
+    </script>
 </body>
 </html>

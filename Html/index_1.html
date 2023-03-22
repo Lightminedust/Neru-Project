@@ -10,7 +10,7 @@
   <body>
     <div>
       <h1>Inscription</h1>
-      <form id="myForm" method="POST">
+      <form id="myForm" method="POST" onsubmit="submitForm(event)">
         <label for="Name"
           ><input
             type="text"
@@ -46,12 +46,47 @@
             placeholder="Saisissez un mot de passe"
             required
         /></label>
+
         <a href="index_2.html">Vous recevrez des Emails</a>
         <button id="submitButton" type="submit">S'inscrire</button>
       </form>
       <a href="../index.html">Retour</a>
-    </div>
-    <script src="../Js/GoTrueSignUp.js" type="module"></script>
+    </div>        
+    <script>
+      // Sélectionnez le formulaire et le bouton d'envoi
+const form = document.querySelector('#myForm');
+const submitBtn = document.querySelector('#submitButton');
+
+// Écoutez l'événement submit du formulaire
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Empêcher le formulaire de se soumettre par défaut
+
+  // Collectez les données du formulaire
+  const formData = new FormData(form);
+
+  // Créez un objet JSON avec les données du formulaire
+  const data = {};
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
+  // Envoyez les données au serveur PHP via AJAX
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'url_de_votre_application_php');
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      console.log('Données envoyées avec succès');
+      window.location.href = 'https://lightminedust.netlify.app/';
+    } else {
+      console.error('Erreur lors de l\'envoi des données');
+    }
+  };
+  xhr.send(JSON.stringify(data));
+});
+
+    </script>
+    <script src="https://cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
