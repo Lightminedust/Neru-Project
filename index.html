@@ -20,7 +20,31 @@
         <a href="Html/index_1.html" target="_self">Créer un compte</a>
         </div>
     </main>
-    <script src="./Js/GoTrueSignin.js" type="module"></script>
+    <script >const form = document.getElementById('login-form');
+        form.addEventListener('submit', handleSubmit);
+        
+        function handleSubmit(event) {
+            event.preventDefault();
+        
+            const email = document.getElementById('mail').value;
+            const password = document.getElementById('password').value;
+        
+            fetch('login.php', {
+                method: 'POST',
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = 'http://example.com'; // Remplacez par le lien souhaité
+                    console.log(`Utilisateur : ${data.user.email}, Nom : ${data.user.nom}`);
+                } else {
+                    console.log(data.message);
+                }
+            })
+            .catch(error => console.error(error));
+        }
+        </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>

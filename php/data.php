@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     file_put_contents('../data/data.json', $jsonData);
     
     // Redirige l'utilisateur vers une autre page
-    header('Location: ');
+    echo 'Formulaire soumis avec succès!';
     exit;
 }
 ?>
